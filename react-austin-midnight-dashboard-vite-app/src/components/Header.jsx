@@ -20,7 +20,8 @@ const Header = ({opened, handleClick}) => {
         top: 0;
         min-height: 3rem;
         width: 100%;
-        /* background: #f7f7f7; */
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
         z-index: 1;
       `}
     >
@@ -28,8 +29,8 @@ const Header = ({opened, handleClick}) => {
         className={css`
           min-height: 3rem;
           position: absolute;
-          top: 10px;
-          left: 10px;
+          top: 0;
+          left: 0.5rem;
           display: flex;
           align-items: center;
           gap: 0.5rem;
@@ -96,7 +97,7 @@ const Header = ({opened, handleClick}) => {
         className={css`
           min-height: 3rem;
           position: absolute;
-          top: 10px;
+          top: 0;
           right: 1rem;
           display: flex;
           align-items: center;
