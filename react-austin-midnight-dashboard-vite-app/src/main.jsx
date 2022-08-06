@@ -19,7 +19,7 @@ import {NotFoundPage} from './pages/not-found';
 
 const App = () => {
   const location = useLocation();
-
+  const [isTrigger, setIsTrigger] = useState(false);
   const [opened, setOpened] = useState(false);
 
   const doAutoCloseSideBar = useCallback((e) => {
@@ -31,6 +31,7 @@ const App = () => {
     setOpened((opened) => {
       return !opened;
     });
+    setIsTrigger(true);
   }, []);
 
   return (
@@ -47,25 +48,14 @@ const App = () => {
           top: 3rem;
           width: 100%;
           display: flex;
-          aside {
-            overflow: hidden;
-            transition: max-width 0.6s ease;
-            width: 100%;
-            height: calc(100vh - 3rem);
-            /* border: 1px solid darkgray; */
-            &.open {
-              max-width: 200px;
-            }
-            &.close {
-              max-width: 48px;
-              @media (max-width: 768px) {
-                max-width: 0px;
-              }
-            }
-          }
         `}
       >
-        <Sidebar opened={opened} />
+        <Sidebar
+          opened={opened}
+          setOpened={setOpened}
+          isTrigger={isTrigger}
+          setIsTrigger={setIsTrigger}
+        />
         <main
           className={cx(
             css`

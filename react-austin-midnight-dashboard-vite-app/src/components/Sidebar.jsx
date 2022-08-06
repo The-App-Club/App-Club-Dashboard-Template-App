@@ -1,14 +1,69 @@
 import {css, cx} from '@emotion/css';
+import {motion, useAnimationControls} from 'framer-motion';
 import {useNavigate} from 'react-router-dom';
 import {FaHome} from 'react-icons/fa';
 import {FaHatCowboySide} from 'react-icons/fa';
 import {MdContactMail} from 'react-icons/md';
 import {TbCup} from 'react-icons/tb';
+import {useClickOutside} from '../hooks/useClickOutside';
+import {useEffect, useRef} from 'react';
+import gsap, {Power3} from 'gsap';
 
-const Sidebar = ({opened}) => {
+const Sidebar = ({opened, setOpened, isTrigger, setIsTrigger}) => {
   const navigate = useNavigate();
+  const navContainerDomRef = useRef();
+  const controls = useAnimationControls();
+
+  useClickOutside(navContainerDomRef, (e) => {
+    if (!isTrigger) {
+      setOpened(false);
+    }
+  });
+  useEffect(() => {
+    if (opened) {
+      gsap.to(navContainerDomRef.current, {
+        maxWidth: 200,
+        duration: 0.6,
+        ease: Power3.easeInOut,
+        onComplete: function () {
+          setIsTrigger(false);
+        },
+      });
+    } else {
+      gsap.to(navContainerDomRef.current, {
+        maxWidth: window.matchMedia('(max-width: 768px)').matches ? 0 : 48,
+        duration: 0.6,
+        ease: Power3.easeInOut,
+        onComplete: function () {
+          setIsTrigger(false);
+        },
+      });
+    }
+  }, [opened]);
+
   return (
-    <aside className={cx(css``, `${opened ? 'open' : 'close'}`)}>
+    <aside
+      ref={navContainerDomRef}
+      className={cx(
+        css`
+          overflow: hidden;
+          width: 100%;
+          height: calc(100vh - 3rem);
+          /* border: 1px solid darkgray; */
+          /* transition: max-width 0.6s ease; */
+          /* &.open {
+            max-width: 200px;
+          }
+          &.close {
+            max-width: 48px;
+            @media (max-width: 768px) {
+              max-width: 0px;
+            }
+          } */
+        `
+        // `${opened ? 'open' : 'close'}`
+      )}
+    >
       <nav
         className={cx(
           css`
