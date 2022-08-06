@@ -50,8 +50,8 @@ const Sidebar = ({opened, setOpened, isTrigger, setIsTrigger}) => {
           width: 100%;
           height: calc(100vh - 3rem);
           /* border: 1px solid darkgray; */
-          /* transition: max-width 0.6s ease; */
-          /* &.open {
+          transition: max-width 0.6s ease;
+          &.open {
             max-width: 200px;
           }
           &.close {
@@ -59,9 +59,9 @@ const Sidebar = ({opened, setOpened, isTrigger, setIsTrigger}) => {
             @media (max-width: 768px) {
               max-width: 0px;
             }
-          } */
-        `
-        // `${opened ? 'open' : 'close'}`
+          },
+        `,
+        `${opened ? 'open' : 'close'}`
       )}
     >
       <nav
