@@ -1,7 +1,7 @@
 import {css} from '@emotion/css';
 import {Layout} from '../../layouts/default';
 
-const NotFoundPage = ({pageName, notifier}) => {
+const SettingsPage = ({pageName, notifier}) => {
   return (
     <Layout pageName={pageName} notifier={notifier} className={css``}>
       <section
@@ -14,7 +14,7 @@ const NotFoundPage = ({pageName, notifier}) => {
           flex-direction: column;
         `}
       >
-        <h2>NotFoundPage</h2>
+        <h2>SettingsPage</h2>
         <p>something...</p>
         <p>something...</p>
         <p>something...</p>
@@ -23,4 +23,4 @@ const NotFoundPage = ({pageName, notifier}) => {
   );
 };
 
-export {NotFoundPage};
+export {SettingsPage};

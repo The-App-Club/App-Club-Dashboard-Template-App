@@ -7,6 +7,8 @@ import {RiBarChartFill} from 'react-icons/ri';
 import {GrBeacon} from 'react-icons/gr';
 import {RiNewspaperLine} from 'react-icons/ri';
 import {MdNotificationsNone} from 'react-icons/md';
+import {MdSettings} from 'react-icons/md';
+import {MdOutlineLogout} from 'react-icons/md';
 import {useNavigate} from 'react-router-dom';
 import {Profile} from './Profile';
 import {Notification} from './Notification';
@@ -79,7 +81,7 @@ const Header = ({opened, handleClick}) => {
         >
           <div
             className={css`
-              padding-left: 1rem;
+              padding-left: 0.5rem;
               display: flex;
               justify-content: center;
               align-items: center;
@@ -136,10 +138,18 @@ const Header = ({opened, handleClick}) => {
           menuData={[
             {
               id: 0,
-              name: `Topics`,
-              pathname: `/topic`,
+              name: `Settings`,
+              pathname: `/settings`,
               icon: () => {
-                return <MdOutlineChat size={24} />;
+                return <MdSettings size={24} />;
+              },
+            },
+            {
+              id: 1,
+              name: `Logout`,
+              pathname: `/logout`,
+              icon: () => {
+                return <MdOutlineLogout size={24} />;
               },
             },
           ]}

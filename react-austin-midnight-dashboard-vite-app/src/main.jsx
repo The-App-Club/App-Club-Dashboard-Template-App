@@ -9,13 +9,20 @@ import {BrowserRouter, Routes, Route, useLocation} from 'react-router-dom';
 
 import {Scrollbars} from 'rc-scrollbars';
 
+import Header from './components/Header';
+import {Sidebar} from './components/Sidebar';
+import Breadcrumbs from './components/Breadcrumbs';
+
 import {HomePage} from './pages/home';
 import {AboutPage} from './pages/about';
 import {ContactPage} from './pages/contact';
 import {WorkPage} from './pages/work';
-import Header from './components/Header';
-import {Sidebar} from './components/Sidebar';
 import {NotFoundPage} from './pages/not-found';
+import {LogoutPage} from './pages/logout';
+import {MomentPage} from './pages/moment';
+import {NewslettersPage} from './pages/newsletters';
+import {SettingsPage} from './pages/settings';
+import {AnalyticsPage} from './pages/analytics';
 
 const App = () => {
   const location = useLocation();
@@ -42,6 +49,7 @@ const App = () => {
       `}
     >
       <Header opened={opened} handleClick={handleClick} />
+
       <div
         className={css`
           position: absolute;
@@ -61,10 +69,17 @@ const App = () => {
             css`
               flex: 1;
               overflow: hidden;
-              overflow-y: auto;
+              /* overflow-y: auto; */
             `
           )}
         >
+          <Breadcrumbs
+            className={css`
+              padding-left: 0.5rem;
+              width: 100%;
+            `}
+            notifier={doAutoCloseSideBar}
+          />
           <Scrollbars
             className={css`
               width: 100%;
@@ -103,6 +118,51 @@ const App = () => {
                   path={'/work'}
                   element={
                     <WorkPage
+                      pageName={location.pathname}
+                      notifier={doAutoCloseSideBar}
+                    />
+                  }
+                />
+                <Route
+                  path={'/logout'}
+                  element={
+                    <LogoutPage
+                      pageName={location.pathname}
+                      notifier={doAutoCloseSideBar}
+                    />
+                  }
+                />
+                <Route
+                  path={'/moment'}
+                  element={
+                    <MomentPage
+                      pageName={location.pathname}
+                      notifier={doAutoCloseSideBar}
+                    />
+                  }
+                />
+                <Route
+                  path={'/newsletters'}
+                  element={
+                    <NewslettersPage
+                      pageName={location.pathname}
+                      notifier={doAutoCloseSideBar}
+                    />
+                  }
+                />
+                <Route
+                  path={'/settings'}
+                  element={
+                    <SettingsPage
+                      pageName={location.pathname}
+                      notifier={doAutoCloseSideBar}
+                    />
+                  }
+                />
+                <Route
+                  path={'/analytics'}
+                  element={
+                    <AnalyticsPage
                       pageName={location.pathname}
                       notifier={doAutoCloseSideBar}
                     />

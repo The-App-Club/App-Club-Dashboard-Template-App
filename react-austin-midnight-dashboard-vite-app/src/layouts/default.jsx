@@ -34,6 +34,7 @@ const Layout = ({children, className, pageName, notifier}) => {
         css`
           position: relative;
           width: 100%;
+          padding: 1rem 0.5rem 2rem 0.5rem;
         `,
         className
       )}

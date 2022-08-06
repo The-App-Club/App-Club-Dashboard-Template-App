@@ -3,13 +3,7 @@ import {Layout} from '../../layouts/default';
 
 const WorkPage = ({pageName, notifier}) => {
   return (
-    <Layout
-      pageName={pageName}
-      notifier={notifier}
-      className={css`
-        padding: 1rem;
-      `}
-    >
+    <Layout pageName={pageName} notifier={notifier} className={css``}>
       <section
         className={css`
           border: 1px solid darkgray;
