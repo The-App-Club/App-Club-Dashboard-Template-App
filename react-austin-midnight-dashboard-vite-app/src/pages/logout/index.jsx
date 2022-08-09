@@ -1,7 +1,20 @@
 import {css} from '@emotion/css';
 import {Layout} from '../../layouts/default';
+import {useAuthStore} from '../../hooks/useAuthStore';
+import {useEffect} from 'react';
 
 const LogoutPage = ({pageName, notifier}) => {
+  const {jwtToken, removeJwtToken} = useAuthStore((state) => {
+    return {
+      jwtToken: state.jwtToken,
+      removeJwtToken: state.removeJwtToken,
+    };
+  });
+
+  useEffect(() => {
+    removeJwtToken();
+  }, [pageName]);
+
   return (
     <Layout pageName={pageName} notifier={notifier} className={css``}>
       <section

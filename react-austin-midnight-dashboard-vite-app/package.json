@@ -17,11 +17,13 @@
     "hamburgers": "^1.2.1",
     "rc-scrollbars": "^1.1.5",
     "react": "^18.2.0",
+    "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-flip-toolkit": "^7.0.14",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "react-tabs": "^5.1.0",
+    "universal-cookie": "^4.0.4",
     "use-react-router-breadcrumbs": "^3.2.1",
     "zustand": "^4.0.0"
   },

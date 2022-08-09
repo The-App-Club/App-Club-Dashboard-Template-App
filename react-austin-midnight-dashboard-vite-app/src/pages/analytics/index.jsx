@@ -1,7 +1,20 @@
 import {css} from '@emotion/css';
 import {Layout} from '../../layouts/default';
+import {useAuthStore} from '../../hooks/useAuthStore';
+import {useEffect} from 'react';
 
 const AnalyticsPage = ({pageName, notifier}) => {
+  const {jwtToken, setJwtToken} = useAuthStore((state) => {
+    return {
+      jwtToken: state.jwtToken,
+      setJwtToken: state.setJwtToken,
+    };
+  });
+
+  useEffect(() => {
+    setJwtToken({jwtToken: 'cowboy'});
+  }, [pageName]);
+
   return (
     <Layout pageName={pageName} notifier={notifier} className={css``}>
       <section
