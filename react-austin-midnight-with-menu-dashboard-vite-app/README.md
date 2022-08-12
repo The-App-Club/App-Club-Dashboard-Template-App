@@ -1,0 +1,6 @@
+- Reference
+  - [use-animation-controls](https://www.framer.com/docs/use-animation-controls/)
+  - [nookies](https://github.com/maticzav/nookies)
+  - [cookies](https://github.com/reactivestack/cookies)
+  - [universal-cookie](https://github.com/reactivestack/cookies/tree/master/packages/universal-cookie)
+  - [zustand](https://github.com/pmndrs/zustand)
