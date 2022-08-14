@@ -23,7 +23,8 @@ import {MomentPage} from './pages/moment';
 import {NewslettersPage} from './pages/newsletters';
 import {SettingsPage} from './pages/settings';
 import {AnalyticsPage} from './pages/analytics';
-
+import {AnimatePresence} from 'framer-motion';
+import {Layout as Popup} from './layouts/popup';
 const App = () => {
   const location = useLocation();
   const [isTrigger, setIsTrigger] = useState(false);
@@ -73,6 +74,27 @@ const App = () => {
             `
           )}
         >
+          <AnimatePresence>
+            {opened && (
+              <Popup
+                className={css`
+                  height: 100%;
+                  display: none;
+                  @media (max-width: 768px) {
+                    display: block;
+                  }
+                `}
+              >
+                <div
+                  className={css`
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.3);
+                  `}
+                />
+              </Popup>
+            )}
+          </AnimatePresence>
           <Breadcrumbs
             className={css`
               padding-left: 0.5rem;

@@ -23,8 +23,8 @@ const Sidebar = ({opened, setOpened, isTrigger, setIsTrigger}) => {
     if (opened) {
       gsap.to(navContainerDomRef.current, {
         maxWidth: 200,
-        duration: 0.6,
-        ease: Power3.easeInOut,
+        duration: 0.2,
+        ease: Power3.easeOut,
         onComplete: function () {
           setIsTrigger(false);
         },
@@ -32,8 +32,8 @@ const Sidebar = ({opened, setOpened, isTrigger, setIsTrigger}) => {
     } else {
       gsap.to(navContainerDomRef.current, {
         maxWidth: window.matchMedia('(max-width: 768px)').matches ? 0 : 48,
-        duration: 0.6,
-        ease: Power3.easeInOut,
+        duration: 0.2,
+        ease: Power3.easeIn,
         onComplete: function () {
           setIsTrigger(false);
         },

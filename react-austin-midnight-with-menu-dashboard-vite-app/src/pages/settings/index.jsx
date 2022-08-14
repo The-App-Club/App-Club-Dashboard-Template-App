@@ -10,13 +10,6 @@ const SettingsPage = ({pageName, notifier}) => {
           width: 100%;
           max-width: 60rem;
           margin: 0 auto;
-          h2 {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-            z-index: 1;
-          }
         `}
       >
         <h2>SettingsPage</h2>
