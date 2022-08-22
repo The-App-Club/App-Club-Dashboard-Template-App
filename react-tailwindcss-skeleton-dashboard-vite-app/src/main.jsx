@@ -85,6 +85,7 @@ const App = () => {
               className={css`
                 position: sticky;
                 top: 3rem;
+                z-index: 1;
                 background-color: white;
                 width: 100%;
                 padding-left: 3.5rem;
