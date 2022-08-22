@@ -99,7 +99,7 @@ const Nav = ({open, setOpen, isTrigger, setIsTrigger, handleClick}) => {
           }
         `,
         `fixed top-0 right-0 min-h-screen`,
-        `overflow-hidden overflow-y-auto scrollbar-none bg-gray-50`,
+        `overflow-hidden overflow-y-auto scrollbar-none bg-white`,
         `w-full h-full`,
         `flex justify-start items-start flex-col border-l-2`
       )}

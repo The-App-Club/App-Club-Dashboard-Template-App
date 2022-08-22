@@ -104,19 +104,11 @@ const Sidebar = ({
             display: none;
           }
         `,
-        `bg-gray-50`,
+        `bg-white`,
         className
       )}
     >
-      <nav
-        className={cx(
-          css`
-            width: 100%;
-            height: 100%;
-            border-right: 1px solid darkgrey;
-          `
-        )}
-      >
+      <nav className={cx(`w-full h-full border-r-2`)}>
         <ul
           className={cx(
             css`
