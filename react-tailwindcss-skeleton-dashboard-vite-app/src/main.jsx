@@ -69,7 +69,7 @@ const App = () => {
           className={css`
             position: fixed;
             top: 3rem;
-            z-index: 1;
+            z-index: 2;
           `}
         />
         <div className="w-full flex">
