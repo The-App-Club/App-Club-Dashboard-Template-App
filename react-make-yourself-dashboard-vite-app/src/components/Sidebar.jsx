@@ -116,7 +116,7 @@ const Sidebar = ({
               return <GiChestnutLeaf size={32} />;
             }}
           />
-          {[...Array(15)].map((_, index) => {
+          {/* {[...Array(15)].map((_, index) => {
             return (
               <SidebarMenu
                 key={index}
@@ -127,7 +127,7 @@ const Sidebar = ({
                 }}
               />
             );
-          })}
+          })} */}
         </ul>
       </nav>
     </aside>
