@@ -7,6 +7,7 @@ import {BrowserRouter, Routes, Route, useLocation} from 'react-router-dom';
 
 import {Header} from './components/Header';
 import {Sidebar} from './components/Sidebar';
+import {SidebarTooltip} from './components/SidebarTooltip';
 import {Breadcrumbs} from './components/Breadcrumbs';
 import {ScrollToTop} from './components/ScrollToTop';
 
@@ -22,6 +23,8 @@ import logo from './assets/logo.png';
 import '@fontsource/inter';
 import './styles/index.css';
 import './styles/index.scss';
+
+import {motion} from 'framer-motion';
 
 const App = () => {
   const mainDomRef = useRef();
@@ -100,6 +103,11 @@ const App = () => {
           sidebarMinWidth={sidebarMinWidth}
           sidebarMaxWidth={sidebarMaxWidth}
           doneSidebarAction={doneSidebarAction}
+        />
+        <SidebarTooltip
+          opened={opened}
+          sidebarMinWidth={sidebarMinWidth}
+          sidebarMaxWidth={sidebarMaxWidth}
         />
         <main
           ref={mainDomRef}

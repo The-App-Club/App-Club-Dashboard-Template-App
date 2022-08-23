@@ -1,16 +1,52 @@
 import {css, cx} from '@emotion/css';
 import {useNavigate} from 'react-router-dom';
 
-const SidebarMenu = ({path, menuTitle, icon}) => {
+import {AnimatePresence, motion} from 'framer-motion';
+import {useState} from 'react';
+import {useStoreSidebarMenuPosition} from '../hooks/useStoreSidebarMenuPosition';
+
+const SidebarMenu = ({opened, path, menuTitle, icon, notifier}) => {
   const navigate = useNavigate();
+  const [hovering, setHovering] = useState(false);
+
+  const {setSidebarMenuPosition} = useStoreSidebarMenuPosition((state) => {
+    return {
+      setSidebarMenuPosition: state.setSidebarMenuPosition,
+    };
+  });
 
   return (
-    <li
+    <motion.li
+      onHoverStart={(e) => {
+        // if (opened) {
+        //   return;
+        // }
+        setHovering(true);
+        setSidebarMenuPosition({
+          x: e.clientX,
+          y: e.currentTarget.offsetTop,
+          text: menuTitle,
+          hovering: true,
+        });
+      }}
+      onHoverEnd={(e) => {
+        // if (opened) {
+        //   return;
+        // }
+        setHovering(false);
+        setSidebarMenuPosition({
+          x: e.clientX,
+          y: e.currentTarget.offsetTop,
+          text: menuTitle,
+          hovering: false,
+        });
+      }}
       className={cx(
         css`
           width: 100%;
           min-height: 3rem;
         `,
+        `relative`,
         `flex items-center gap-2 px-2`,
         `border-r-2 border-transparent`,
         `hover:border-r-2 hover:border-blue-900 hover:bg-gray-100 hover:cursor-pointer`
@@ -25,7 +61,35 @@ const SidebarMenu = ({path, menuTitle, icon}) => {
         {icon()}
         <h4>{menuTitle}</h4>
       </div>
-    </li>
+      {/* <AnimatePresence>
+        {hovering && (
+          <motion.div
+            className={cx(
+              css`
+                position: fixed;
+                top: 1;
+                z-index: 31;
+              `,
+              'border-2 bg-slate-100'
+            )}
+            initial={{
+              x: 120,
+              opacity: 0,
+            }}
+            animate={{
+              x: 60,
+              opacity: 1,
+            }}
+            exit={{
+              x: 120,
+              opacity: 0,
+            }}
+          >
+            <h2>{menuTitle}</h2>
+          </motion.div>
+        )}
+      </AnimatePresence> */}
+    </motion.li>
   );
 };
 

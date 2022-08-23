@@ -11,7 +11,7 @@ import {AiOutlineQuestionCircle} from 'react-icons/ai';
 import {MdOutlineLocalPolice} from 'react-icons/md';
 import {GiChestnutLeaf} from 'react-icons/gi';
 
-import {SidebarMenu} from './SidebarMenu';
+import {Nav} from './Nav';
 
 const Sidebar = ({
   opened,
@@ -79,57 +79,7 @@ const Sidebar = ({
         `
       )}
     >
-      <nav className={cx(`w-full h-full border-r-2 border-gray-50`)}>
-        <ul className={cx(`w-full flex justify-center items-center flex-col`)}>
-          <SidebarMenu
-            path={'/'}
-            menuTitle={'Home'}
-            icon={() => {
-              return <FaHatCowboySide size={32} />;
-            }}
-          />
-          <SidebarMenu
-            path={'/membership'}
-            menuTitle={'MemberShip'}
-            icon={() => {
-              return <RiAccountCircleLine size={32} />;
-            }}
-          />
-          <SidebarMenu
-            path={'/qa'}
-            menuTitle={'QA'}
-            icon={() => {
-              return <AiOutlineQuestionCircle size={32} />;
-            }}
-          />
-          <SidebarMenu
-            path={'/policy'}
-            menuTitle={'Policy'}
-            icon={() => {
-              return <MdOutlineLocalPolice size={32} />;
-            }}
-          />
-          <SidebarMenu
-            path={'/allergen'}
-            menuTitle={'Allergen'}
-            icon={() => {
-              return <GiChestnutLeaf size={32} />;
-            }}
-          />
-          {/* {[...Array(15)].map((_, index) => {
-            return (
-              <SidebarMenu
-                key={index}
-                path={'/allergen'}
-                menuTitle={'Allergen'}
-                icon={() => {
-                  return <GiChestnutLeaf size={32} />;
-                }}
-              />
-            );
-          })} */}
-        </ul>
-      </nav>
+      <Nav opened={opened} />
     </aside>
   );
 };

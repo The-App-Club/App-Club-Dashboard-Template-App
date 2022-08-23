@@ -13,7 +13,7 @@ import {RiNewspaperLine} from 'react-icons/ri';
 import {MdSettings} from 'react-icons/md';
 import {MdOutlineLogout} from 'react-icons/md';
 
-const Nav = ({opened, sidebarMinWidth, sidebarMaxWidth}) => {
+const Nav = ({opened}) => {
   return (
     <nav className={cx(`relative w-full h-full border-r-2 border-gray-50`)}>
       <ul
@@ -22,6 +22,7 @@ const Nav = ({opened, sidebarMinWidth, sidebarMaxWidth}) => {
         )}
       >
         <SidebarMenu
+          opened={opened}
           path={'/'}
           menuTitle={'Home'}
           icon={() => {
@@ -29,6 +30,7 @@ const Nav = ({opened, sidebarMinWidth, sidebarMaxWidth}) => {
           }}
         />
         <SidebarMenu
+          opened={opened}
           path={'/membership'}
           menuTitle={'MemberShip'}
           icon={() => {
@@ -36,6 +38,7 @@ const Nav = ({opened, sidebarMinWidth, sidebarMaxWidth}) => {
           }}
         />
         <SidebarMenu
+          opened={opened}
           path={'/qa'}
           menuTitle={'QA'}
           icon={() => {
@@ -43,6 +46,7 @@ const Nav = ({opened, sidebarMinWidth, sidebarMaxWidth}) => {
           }}
         />
         <SidebarMenu
+          opened={opened}
           path={'/policy'}
           menuTitle={'Policy'}
           icon={() => {
@@ -50,6 +54,7 @@ const Nav = ({opened, sidebarMinWidth, sidebarMaxWidth}) => {
           }}
         />
         <SidebarMenu
+          opened={opened}
           path={'/allergen'}
           menuTitle={'Allergen'}
           icon={() => {
@@ -57,6 +62,7 @@ const Nav = ({opened, sidebarMinWidth, sidebarMaxWidth}) => {
           }}
         />
         <SidebarMenu
+          opened={opened}
           path={'/analytics'}
           menuTitle={'Analytics'}
           icon={() => {
@@ -64,6 +70,7 @@ const Nav = ({opened, sidebarMinWidth, sidebarMaxWidth}) => {
           }}
         />
         <SidebarMenu
+          opened={opened}
           path={'/moment'}
           menuTitle={'Moments'}
           icon={() => {
@@ -71,6 +78,7 @@ const Nav = ({opened, sidebarMinWidth, sidebarMaxWidth}) => {
           }}
         />
         <SidebarMenu
+          opened={opened}
           path={'/settings'}
           menuTitle={'Settings'}
           icon={() => {
