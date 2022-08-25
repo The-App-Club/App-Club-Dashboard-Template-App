@@ -5,8 +5,10 @@ import {Link} from 'react-router-dom';
 import {RiHome2Line} from 'react-icons/ri';
 import {FaHatCowboySide} from 'react-icons/fa';
 import {MdContactMail} from 'react-icons/md';
+import {MdOutlineMonetizationOn} from 'react-icons/md';
+import {SiReadthedocs} from 'react-icons/si';
+import {AiTwotoneApi} from 'react-icons/ai';
 import {MdFace} from 'react-icons/md';
-import {Button} from '@mui/material';
 
 import image1 from '../assets/Multimedia-55.png';
 import image2 from '../assets/Holidays-28.png';
@@ -27,34 +29,26 @@ const GlobalMenu = () => {
   const menuInfoList = useMemo(() => {
     return [
       {
-        menuName: `home`,
-        description: `It is a long established fact that a reader will be distracted.`,
-        icon: () => {
-          return <RiHome2Line size={24} />;
-        },
-        imageDescription: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur vehicula vulputate.`,
-      },
-      {
-        menuName: `about`,
+        menuName: `developer`,
         description: `Contrary to popular belief, Lorem Ipsum is not simply random text.`,
         icon: () => {
-          return <MdFace size={24} />;
+          return <AiTwotoneApi size={24} />;
         },
         imageDescription: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur vehicula vulputate.`,
       },
       {
-        menuName: `work`,
+        menuName: `price`,
         description: `There are many variations of passages of Lorem Ipsum available.`,
         icon: () => {
-          return <FaHatCowboySide size={24} />;
+          return <MdOutlineMonetizationOn size={24} />;
         },
         imageDescription: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur vehicula vulputate.`,
       },
       {
-        menuName: `contact`,
+        menuName: `docs`,
         description: `The standard chunk of Lorem Ipsum used since the 1500s is .`,
         icon: () => {
-          return <MdContactMail size={24} />;
+          return <SiReadthedocs size={24} />;
         },
         imageDescription: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur vehicula vulputate.`,
       },

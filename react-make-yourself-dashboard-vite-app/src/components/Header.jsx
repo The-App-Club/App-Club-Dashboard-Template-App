@@ -6,7 +6,7 @@ import logo from '../assets/logo.png';
 
 import {MdAccountCircle} from 'react-icons/md';
 import {RiBarChartFill} from 'react-icons/ri';
-import {GrBeacon} from 'react-icons/gr';
+import {BiTimeFive} from 'react-icons/bi';
 import {RiNewspaperLine} from 'react-icons/ri';
 import {MdNotificationsNone} from 'react-icons/md';
 import {MdSettings} from 'react-icons/md';
@@ -69,7 +69,7 @@ const Header = ({opened, handleClick}) => {
               name: `Moments`,
               pathname: `/moment`,
               icon: () => {
-                return <GrBeacon size={24} />;
+                return <BiTimeFive size={24} />;
               },
             },
             {

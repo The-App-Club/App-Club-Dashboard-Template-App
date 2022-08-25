@@ -79,6 +79,14 @@ const Nav = ({opened}) => {
         />
         <SidebarMenu
           opened={opened}
+          path={'/newsletters'}
+          menuTitle={'Newsletters'}
+          icon={() => {
+            return <RiNewspaperLine size={32} />;
+          }}
+        />
+        <SidebarMenu
+          opened={opened}
           path={'/settings'}
           menuTitle={'Settings'}
           icon={() => {

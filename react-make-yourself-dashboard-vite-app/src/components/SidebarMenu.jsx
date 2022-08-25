@@ -61,34 +61,6 @@ const SidebarMenu = ({opened, path, menuTitle, icon, notifier}) => {
         {icon()}
         <h4>{menuTitle}</h4>
       </div>
-      {/* <AnimatePresence>
-        {hovering && (
-          <motion.div
-            className={cx(
-              css`
-                position: fixed;
-                top: 1;
-                z-index: 31;
-              `,
-              'border-2 bg-slate-100'
-            )}
-            initial={{
-              x: 120,
-              opacity: 0,
-            }}
-            animate={{
-              x: 60,
-              opacity: 1,
-            }}
-            exit={{
-              x: 120,
-              opacity: 0,
-            }}
-          >
-            <h2>{menuTitle}</h2>
-          </motion.div>
-        )}
-      </AnimatePresence> */}
     </motion.li>
   );
 };

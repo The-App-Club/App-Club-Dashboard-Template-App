@@ -11,7 +11,26 @@ import {Link} from 'react-router-dom';
 const Notification = ({menuData}) => {
   const menuDomRef = useRef(null);
   const [isOpen, setOpen] = useState(false);
-
+  // https://szhsin.github.io/react-menu#classname-prop
+  const menuItemClassName = ({hover}) => {
+    return hover
+      ? cx(
+          css`
+            padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+          `,
+          `border-l-2 border-transparent`,
+          `hover:border-blue-900 hover:bg-gray-100 hover:cursor-pointer`,
+          `flex items-center gap-2`,
+          `my-menuitem-hover`
+        )
+      : cx(
+          css`
+            padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+          `,
+          `border-l-2 border-transparent`,
+          `flex items-center gap-2`
+        );
+  };
   return (
     <div
       ref={menuDomRef}
@@ -51,13 +70,7 @@ const Notification = ({menuData}) => {
                 color: initial;
               `}
             >
-              <MenuItem
-                className={cx(
-                  css`
-                    padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-                  `
-                )}
-              >
+              <MenuItem className={menuItemClassName}>
                 {menuItem.icon()}
                 <span
                   className={css`
