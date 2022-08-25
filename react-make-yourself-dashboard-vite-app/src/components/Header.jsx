@@ -15,6 +15,7 @@ import {MdOutlineLogout} from 'react-icons/md';
 import {Hamburger} from './Hamburger';
 import {Profile} from './Profile';
 import {Notification} from './Notification';
+import {GlobalMenu} from './GlobalMenu';
 
 const Header = ({opened, handleClick}) => {
   return (
@@ -32,6 +33,16 @@ const Header = ({opened, handleClick}) => {
         <img src={logo} alt={`logo`} className={`w-10`} />
         <h2 className="text-lg">Make Yourself</h2>
       </Link>
+      <div
+        className={css`
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        `}
+      >
+        <GlobalMenu />
+      </div>
       <div
         className={css`
           min-height: 3rem;

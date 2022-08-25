@@ -24,8 +24,6 @@ import '@fontsource/inter';
 import './styles/index.css';
 import './styles/index.scss';
 
-import {motion} from 'framer-motion';
-
 const App = () => {
   const mainDomRef = useRef();
   const location = useLocation();

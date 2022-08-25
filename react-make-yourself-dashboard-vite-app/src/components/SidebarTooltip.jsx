@@ -43,6 +43,7 @@ const SidebarTooltip = ({opened, sidebarMinWidth, sidebarMaxWidth}) => {
           position: fixed;
           min-width: 8rem;
           min-height: 6rem;
+          pointer-events: none;
           z-index: 2;
         `,
         'border-2 bg-white rounded-lg p-2'
